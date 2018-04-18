@@ -37,7 +37,7 @@ end
 iter = 0;
 root = 0;
 t = 1;
-
+% Check if root is equal to one of the brackets
 if func(x1) == 0 || func(u1) == 0
    fprintf('\n Root is equal = to one of two brackets')
    t = 0;
@@ -45,11 +45,12 @@ elseif func(x1)*func(u1) > 0
     error('No root exhists between chosen brackets')
     t = 0;
 end
-
+% While true
 while t == 1
+    % Iterate through false position to approximate the root
     rtold = root;
     root = double(u1-(((func(u1))*(x1-u1))/(func(x1)-func(u1))));
-    
+    % calculate aproximate error
     if root ~= 0
         ea = abs((root-rtold)/root)*100;
     end
@@ -59,11 +60,7 @@ while t == 1
     
     if ea <= es || iter >= maxiter
                 t = 0;
-                fprintf('\n The root estimate is %4.4f',root)
-                fprintf('\n The realative error is %4.2f percent',ea)
-                fprintf('\n Function evaluated at approximation = %4.4f',fx)
-                fprintf('\n Number of iterations: %4.2f',iter)
-    elseif func(x1)* func(root) < 0
+                    elseif func(x1)* func(root) < 0
         u1 = root;
     elseif func(x1)*func(root) > 0 
         x1 = root;
