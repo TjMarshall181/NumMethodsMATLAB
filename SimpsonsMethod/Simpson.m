@@ -35,9 +35,8 @@ elseif m ~= m1
     error('x and y vectors must be the same size')
 elseif isvector(x) == 0 || isvector(y) == 0
     error('Inputs must be vectors')
-elseif (m < 3) || (m1 < 3)
-    error('insufficient data points in input for Simpson 1/3 rule')
 end
+
 if max(2.^diff(x))- min(2.^diff(x)) ~= 0
     error('X matrix must be equally spaced')
 end
