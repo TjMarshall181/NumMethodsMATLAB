@@ -1,6 +1,6 @@
 # NumMethodsMATLAB
 __________________________________________________
-This directory contains various algorithms to perfor numerical methods for engineering application.
+This directory contains various algorithms to perform numerical methods for engineering application.
 
 
 * Each algorithm is run through MATLAB and have been created for learning purposes as well as conventional purposes. 
